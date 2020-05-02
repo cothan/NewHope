@@ -1,0 +1,10 @@
+set(newhope_aarch64_srcs
+	aarch64/bitrev_vector.S
+	aarch64/mul_coefficients.S
+	aarch64/ntt.S
+	aarch64/poly_add.S
+	aarch64/poly_getnoise.S
+	aarch64/poly_pointwise.S
+	aarch64/poly_sub.S
+	PARENT_SCOPE
+)
