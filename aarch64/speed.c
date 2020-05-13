@@ -4,6 +4,7 @@
 #include <locale.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "ccakem.h"
 
 #define NTESTS 20000
 

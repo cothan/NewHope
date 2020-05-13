@@ -1,6 +1,6 @@
-CC = /usr/bin/gcc
-CFLAGS = -Wall -Wextra -g -O3 -fomit-frame-pointer -march=native -I asm/macro/ -fno-stack-protector -mstrict-align 
-NISTFLAGS = -O3 -fomit-frame-pointer -march=native -fPIC -no-pie -fno-stack-protector -mstrict-align 
+CC = cc
+CFLAGS = -Wall -Wextra -g -O3 -fomit-frame-pointer -I asm/macro/ -fno-stack-protector -mstrict-align  -lpapi
+NISTFLAGS = -O3 -fomit-frame-pointer -fPIC -no-pie -fno-stack-protector -mstrict-align 
 
 HEADERS = params.h poly.h randombytes.h ntt.h reduce.h verify.h cpapke.h Makefile
 SOURCES = poly.c reduce.c fips202.c verify.c cpapke.c ntt.c precomp.c asm/bitrev_vector.S \
@@ -8,9 +8,9 @@ SOURCES = poly.c reduce.c fips202.c verify.c cpapke.c ntt.c precomp.c asm/bitrev
 CCAKEM  = ccakem.c
 CPAKEM  = cpakem.c
 
-LDFLAGS += $(shell pkg-config papi --libs)
-CFLAGS += $(shell pkg-config papi --cflags)
-CXXFLAGS += $(shell pkg-config papi --cflags)
+#LDFLAGS += $(shell pkg-config papi --libs)
+#CFLAGS += $(shell pkg-config papi --cflags)
+#CXXFLAGS += $(shell pkg-config papi --cflags)
 
 # asm/%.o: asm/%.S Makefile
 # 	$(CC) $(CFLAGS) -c -o $@ $< -I asm/macro/

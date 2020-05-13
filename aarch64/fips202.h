@@ -12,5 +12,6 @@ void shake256(unsigned char *output, unsigned long long outputByteLen, const uns
 void shake128_absorb_asm(uint64_t *s, const unsigned char *input, unsigned long long inputByteLen);
 void shake128_squeezeblocks_asm(unsigned char *output, unsigned long long nblocks, uint64_t *s);
 void shake256_asm(unsigned char *output, unsigned long long outputByteLen, const unsigned char *input, unsigned long long inputByteLen);
+  
 
 #endif
